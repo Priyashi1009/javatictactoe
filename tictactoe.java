@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class TicTacToe {
-    // Create a 3x3 grid for the game board
     private char[][] board = new char[3][3];
     private char currentPlayer;
 
-    // Constructor to initialize the game
+    
     public TicTacToe() {
         currentPlayer = 'X'; // Player X starts the game
         initializeBoard();
@@ -33,11 +32,11 @@ public class TicTacToe {
         }
     }
 
-    // Method to handle a player's move
+    
     public boolean makeMove(int row, int col) {
         // Check if the selected cell is empty
         if (board[row][col] == '-') {
-            board[row][col] = currentPlayer; // Mark the cell with the current player's symbol
+            board[row][col] = currentPlayer; 
             return true;
         } else {
             System.out.println("Cell already occupied. Try again.");
@@ -45,12 +44,12 @@ public class TicTacToe {
         }
     }
 
-    // Method to switch players after each move
+    
     public void switchPlayer() {
         currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
     }
 
-    // Method to check for a winner
+
     public boolean checkWinner() {
         // Check rows, columns, and diagonals for winning combinations
         for (int i = 0; i < 3; i++) {
@@ -70,7 +69,7 @@ public class TicTacToe {
         return false;
     }
 
-    // Main method to run the game
+    
     public static void main(String[] args) {
         TicTacToe game = new TicTacToe();
         Scanner scanner = new Scanner(System.in);
